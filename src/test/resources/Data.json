@@ -1,0 +1,1297 @@
+{
+  "baseUri": "https://apisootra.nyxwolves.com",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODU1M2Y4Y2FhNTQ3MjhlNDhjMzM0ZjQiLCJpYXQiOjE3NTI1NTY2OTQsImV4cCI6MTc1MjU4NTQ5NH0.haJRxT1NAxpp55YjI4XuGGwSZi1Z30Vo0c4qHCbBv-0",
+  "adminToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODU1M2IxMTZlOTFkNTE1MTk2ODQ4YTIiLCJpYXQiOjE3NTI1NTY5MTMsImV4cCI6MTc1MjU4NTcxM30.wGS7E3xrwnNLKL8T0EnMagNwak0aIqgQJZkIDL8_W_8",
+  "login": {
+    "basePath": "/customer/auth/login",
+    "expectedStatusCode": 200,
+    "expectedMessage": "Welcome back! You’ve successfully logged in.",
+    "body": {
+      "email": "pandeeswaran17@gmail.com",
+      "password": "PandE@#20"
+    }
+  },
+  "signup": {
+    "basePath": "/customer/auth/signup",
+    "expectedStatusCode": 201,
+    "expectedMessage": "Your account has been created successfully! You can now log in.",
+    "body": {
+      "email": "cr@gmail.com",
+      "password": "Pande@2002",
+      "name": "Pandeeswaran"
+    }
+  },
+  "verifyotp": {
+    "basePath": "/customer/auth/verify-otp",
+    "expectedStatusCode": 200,
+    "expectedMessage": "OTP verified successfully.",
+    "body": {
+      "email": "pandeeswaran617@gmail.com",
+      "otp": "163251"
+    }
+  },
+  "forgetpassword": {
+    "basePath": "/customer/auth/forgot-password",
+    "expectedStatusCode": 200,
+    "expectedMessage": "A new OTP has been sent to your email. Please check your inbox.",
+    "body": {
+      "email": "pandeeswaran617@gmail.com"
+    }
+  },
+  "resetpassword": {
+    "basePath": "/customer/auth/reset-password",
+    "expectedStatusCode": 200,
+    "expectedMessage": "Your password has been reset successfully! You can now log in.",
+    "body": {
+      "email": "pandeeswaran617@gmail.com",
+      "otp": "774773",
+      "newPassword": "PandE@#20"
+    }
+  },
+  "onboarding": {
+    "basePath": "/customer/onboarding",
+    "expectedStatusCode": 200,
+    "expectedMessage": "\"Your onboarding details have been saved successfully.\"",
+    "body": {
+      "type": "company",
+      "companyName": "Acme Corp",
+      "companyAddress": "Address",
+      "companySize": "11-50",
+      "industry": "Technology",
+      "step": 1
+    }
+  },
+  "onboardingInvite": {
+    "basePath": "/customer/onboarding/invite-user",
+    "expectedStatusCode": 200,
+    "body": {
+      "inviteList": [
+        {
+          "email": "pandeeswaran17@gmail.com",
+          "roleId": "68553b0f6e91d5151968488c"
+        }
+      ]
+    }
+  },
+  "selectSubscription": {
+    "basePath": "/customer/onboarding/select-subscription",
+    "expectedStatusCode": 200,
+    "body": {
+      "itemId": "sootra_plan"
+    }
+  },
+  "getCustomerProfile": {
+    "basePath": "/customer/profile",
+    "expectedStatusCode": 200
+  },
+  "updateUserProfile": {
+    "basePath": "/customer/profile",
+    "expectedStatusCode": 200,
+    "body": {
+      "firstName": "Pandeeswaran",
+      "lastName": "Tester",
+      "phone": "9876543210",
+      "companyName": "Test Company"
+    }
+  },
+  "inviteUsersIntoSystem": {
+    "basePath": "/customer/users",
+    "expectedStatusCode": 200,
+    "body": {
+      "inviteList": [
+        {
+          "email": "pandeeswaran17@gmail.com",
+          "roleId": "68553b0f6e91d5151968488c"
+        }
+      ]
+    }
+  },
+  "getAllUsers": {
+    "basePath": "/customer/users?page=1&pageSize=10",
+    "expectedStatusCode": 200
+  },
+  "getUserById": {
+    "basePath": "/customer/users",
+    "userId": "6874c8252d28407f2d393877",
+    "expectedStatusCode": 200
+  },
+  "updateUserById": {
+    "basePath": "/customer/users",
+    "userId": "68553f8caa54728e48c334f4",
+    "expectedStatusCode": 200,
+    "body": {
+      "roleId": "68553b0f6e91d5151968488c",
+      "firstName": "leo",
+      "lastName": "messi",
+      "isActive": true
+    }
+  },
+  "deleteUserById": {
+    "basePath": "/customer/users",
+    "userId": "6874c8252d28407f2d393877",
+    "expectedStatusCode": 200
+  },
+  "getActiveUser": {
+    "basePath": "/customer/active",
+    "from": "",
+    "to": "",
+    "expectedStatusCode": 200
+  },
+  "getUserActivity": {
+    "basePath": "/customer/users/activity",
+    "page": 1,
+    "pageSize": 10,
+    "expectedStatusCode": 200
+  },
+  "createAlert": {
+    "basePath": "/alerts",
+    "method": "POST",
+    "body": {
+      "userId": "68553f8caa54728e48c334f4",
+      "title": "New Notification",
+      "message": "You have a new message."
+    },
+    "expectedStatusCode": 200
+  },
+  "getAlerts": {
+    "basePath": "/alerts",
+    "method": "GET",
+    "queryParams": {
+      "page": 1,
+      "pageSize": 10
+    },
+    "expectedStatusCode": 200
+  },
+  "updateAlert": {
+    "basePath": "/alerts",
+    "method": "PUT",
+    "alertId": "685e5af0919e1d5c49bfd3d3",
+    "body": {
+      "title": "Updated Notification",
+      "message": "This is the updated message.",
+      "isRead": true
+    },
+    "expectedStatusCode": 200
+  },
+  "markAlertsAsRead": {
+    "basePath": "/alerts/mark-as-read",
+    "method": "POST",
+    "expectedStatusCode": 200
+  },
+  "getAllRoles": {
+    "basePath": "/api/roles",
+    "method": "GET",
+    "expectedStatusCode": 200
+  },
+  "getStaticQuestions": {
+    "basePath": "/api/questions",
+    "method": "GET",
+    "expectedStatusCode": 200
+  },
+  "createTemplate": {
+    "projectId": "6874dd4e2d28407f2d3950a5",
+    "endpoint": "/projects/templates",
+    "method": "POST",
+    "expectedStatusCode": 200,
+    "templateName": "Marketing email Template",
+    "description": "Template for an email marketing.",
+    "type": "email",
+    "source": "Upload",
+    "deadline": "2024-12-31T23:59:59Z",
+    "status": "Draft",
+    "content": "This is a sample template content.",
+    "macRes": "1920x1080",
+    "winRes": "1366x768",
+    "clientId": "684aa6a93ab5e4f6d5f544bd",
+    "questions": [
+      {
+        "category": "Campaign Overview",
+        "questions": [
+          {
+            "question": "What is the primary goal?",
+            "answer": "Awareness"
+          }
+        ]
+      }
+    ],
+    "configs": {
+      "windows 10": {
+        "chrome": [
+          "76"
+        ]
+      },
+      "macos mojave": {
+        "safari": [
+          "12"
+        ]
+      },
+      "ios 12.0": {
+        "devices": [
+          "iphone xs max"
+        ]
+      },
+      "android 9.0": {
+        "devices": [
+          "galaxy s9 plus"
+        ]
+      }
+    },
+    "fileUploadPath": "C:/Users/pande/Downloads/12.html",
+    "recDocPath": "C:/Users/pande/Downloads/Name.docx"
+  },
+  "getProjectTemplates": {
+    "projectId": "685a3c1266d511d80af413ad",
+    "basePath": "/projects/685a3c1266d511d80af413ad/templates",
+    "method": "GET",
+    "queryParams": {
+      "page": 1,
+      "pageSize": 10
+    },
+    "expectedStatusCode": 200
+  },
+  "updateProjectTemplate": {
+    "basePath": "/projects/templates/685a3cc366d511d80af415c6",
+    "method": "PUT",
+    "requestBody": {
+      "name": "Updated Marketing Campaign Template",
+      "description": "Updated template for a marketing campaign.",
+      "status": "Published"
+    },
+    "expectedStatusCode": 200
+  },
+  "getProjectTemplateById": {
+    "basePath": "/projects/685a3c1266d511d80af413ad/templates/685a3dab66d511d80af416f9",
+    "method": "GET",
+    "expectedStatusCode": 200
+  },
+  "deleteProjectTemplate": {
+    "basePath": "/projects/685a3c1266d511d80af413ad/templates/685a3dab66d511d80af416f9",
+    "method": "DELETE",
+    "expectedStatusCode": 200
+  },
+  "getTemplateCounts": {
+    "basePath": "/projects/templates/count",
+    "method": "GET",
+    "expectedStatusCode": 200
+  },
+  "getTemplateStatus": {
+    "basePath": "/projects/templates/status",
+    "method": "GET",
+    "expectedStatusCode": 200,
+    "templateType": "email"
+  },
+  "uploadScreenshot": {
+    "method": "POST",
+    "path": "/api/screenshots",
+    "expectedStatusCode": 201,
+    "attachment": {
+      "filePath": "C:/Users/pande/Pictures/Screenshots/Screenshot 2025-06-16 130820.png",
+      "contentType": "image/png"
+    }
+  },
+  "getPublicScreenshot": {
+    "method": "GET",
+    "path": "/api/screenshots/public/{screenshotId}",
+    "params": {
+      "screenshotId": "686227fb2373a6e3dddf9890"
+    }
+  },
+  "shareScreenshot": {
+    "method": "PATCH",
+    "path": "/api/screenshots/share/{screenshotId}",
+    "params": {
+      "screenshotId": "686227fb2373a6e3dddf9890"
+    },
+    "body": {
+      "users": [
+        "68553f8caa54728e48c334f4"
+      ],
+      "emails": [
+        "pandeeswaran17@gmail.com"
+      ]
+    }
+  },
+  "createFile": {
+    "method": "POST",
+    "path": "/files/{workspaceId}",
+    "params": {
+      "workspaceId": "685a3c1266d511d80af413ad"
+    },
+    "file": {
+      "filePath": "C:/Users/pande/Pictures/Screenshots/Screenshot 2025-06-16 130820.png",
+      "fieldName": "file"
+    },
+    "body": {
+      "absoluteElements": "[\"element1\", \"element2\"]",
+      "brandGuidelines": "{\"color\":\"#FF5733\", \"font\":\"Arial\"}",
+      "templateFlexibility": "{\"editable\":true, \"restrictions\":[]}"
+    }
+  },
+  "getAllFiles": {
+    "method": "GET",
+    "path": "/files/{workspaceId}",
+    "params": {
+      "workspaceId": "685a3c1266d511d80af413ad"
+    }
+  },
+  "getFileById": {
+    "method": "GET",
+    "path": "/files/{workspaceId}/{fileId}",
+    "params": {
+      "workspaceId": "685a3c1266d511d80af413ad",
+      "fileId": "68749f2032c0df429cab2249"
+    }
+  },
+  "updateFileMetadata": {
+    "method": "PUT",
+    "path": "/files/{workspaceId}/{fileId}",
+    "params": {
+      "workspaceId": "685a3c1266d511d80af413ad",
+      "fileId": "68749f2032c0df429cab2249"
+    },
+    "body": {
+      "absoluteElements": "[{\"element\": \"updatedElement\"}]",
+      "brandGuidelines": "{\"brand\": \"newBrandGuideline\"}",
+      "templateFlexibility": "{\"flexibility\": true}"
+    }
+  },
+  "deleteFile": {
+    "method": "DELETE",
+    "path": "/files/{workspaceId}/{fileId}",
+    "params": {
+      "workspaceId": "685a3c1266d511d80af413ad",
+      "fileId": "68749f2032c0df429cab2249"
+    }
+  },
+  "contactUs": {
+    "method": "POST",
+    "path": "/api/contact-us",
+    "body": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@example.com",
+      "contactNumber": "1234567890",
+      "message": "I need help with your services."
+    }
+  },
+  "getAllDevices": {
+    "method": "GET",
+    "path": "/api/devices",
+    "query": {
+      "type": "email",
+      "os": "Windows 10",
+      "browser": "Chrome",
+      "category": "Web"
+    }
+  },
+  "generateMailgunPreview": {
+    "method": "POST",
+    "path": "/api/preview/tests",
+    "body": {
+      "content": "<html><body><h1>Email Preview</h1></body></html>",
+      "subject": "Test Email",
+      "clients": [
+        "outlookcom-lm_edgecurrent_win10",
+        "outlookcom-lm_chrcurrent_win10"
+      ]
+    }
+  },
+  "getMailgunPreview": {
+    "method": "GET",
+    "path": "/api/preview/tests/{testId}",
+    "params": {
+      "testId": "SnN23YFoqzQvhXIGIRHz9nuNa46UE7IGkPpJ7p474qO4z"
+    }
+  },
+  "getResolutions": {
+    "method": "GET",
+    "path": "/api/resolutions"
+  },
+  "getReviewersByVersion": {
+    "method": "GET",
+    "path": "/projects/{projectId}/templates/{templateId}/versions/{versionId}/reviewers",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad",
+      "templateId": "685a3cc366d511d80af415c6",
+      "versionId": "685a3cc466d511d80af415cb"
+    }
+  },
+  "getReviewsByVersion": {
+    "method": "GET",
+    "path": "/projects/{projectId}/templates/{templateId}/versions/{versionId}/reviews",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad",
+      "templateId": "685a3cc366d511d80af415c6",
+      "versionId": "685a3cc466d511d80af415cb"
+    }
+  },
+  "updateReviewStatus": {
+    "method": "PUT",
+    "path": "/projects/{projectId}/templates/{templateId}/versions/{versionId}/reviews",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad",
+      "templateId": "685a3cc366d511d80af415c6",
+      "versionId": "685a3cc466d511d80af415cb"
+    },
+    "body": {
+      "status": "reviewed",
+      "comment": "The changes look good to me."
+    }
+  },
+  "addComment": {
+    "method": "POST",
+    "path": "/projects/{projectId}/templates/{templateId}/versions/{versionId}/comments",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad",
+      "templateId": "685a3cc366d511d80af415c6",
+      "versionId": "64a73dfbdf9b1a001a1d2bc3"
+    },
+    "form": {
+      "parentCommentId": "",
+      "content": "This is a new comment.",
+      "coordinates": "{\"x\": 250, \"y\": 400}",
+      "deviceId": "device1234",
+      "taggedUsers": "68553f8caa54728e48c334f4",
+      "type": "Default"
+    },
+    "file": {
+      "filePath": "C:/Users/pande/Pictures/Screenshots/Screenshot 2025-06-16 130820.png",
+      "fieldName": "attachment",
+      "contentType": "image/png"
+    }
+  },
+  "getComments": {
+    "method": "GET",
+    "path": "/projects/{projectId}/templates/{templateId}/versions/{versionId}/comments",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad",
+      "templateId": "685a3cc366d511d80af415c6",
+      "versionId": "64a73dfbdf9b1a001a1d2bc3"
+    },
+    "query": {
+      "page": 1,
+      "pageSize": 10,
+      "type": "Default"
+    }
+  },
+  "updateComment": {
+    "method": "PUT",
+    "path": "/projects/{projectId}/templates/{templateId}/versions/{versionId}/comments/{commentId}",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad",
+      "templateId": "685a3cc366d511d80af415c6",
+      "versionId": "64a73dfbdf9b1a001a1d2bc3",
+      "commentId": "6874c99b2d28407f2d393922d"
+    },
+    "body": {
+      "content": "Updated comment content.",
+      "status": "resolved",
+      "taggedUsers": "68553f8caa54728e48c334f4",
+      "type": "Image",
+      "isVisible": false
+    }
+  },
+  "updateCommentStatus": {
+    "method": "PUT",
+    "path": "/projects/comments/{commentId}",
+    "params": {
+      "commentId": "6874c99b2d28407f2d393922"
+    },
+    "body": {
+      "status": "resolved"
+    }
+  },
+  "deleteComment": {
+    "method": "DELETE",
+    "path": "/projects/comments/{commentId}",
+    "params": {
+      "commentId": "6874c99b2d28407f2d393922"
+    }
+  },
+  "getTaggedComments": {
+    "method": "GET",
+    "path": "/projects/templates/comments/tagged"
+  },
+  "createBuilderTemplate": {
+    "method": "POST",
+    "path": "/projects/{projectId}/builder/templates",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad"
+    },
+    "formData": {
+      "name": "Marketing Campaign Template",
+      "description": "Template for a marketing campaign.",
+      "type": "email",
+      "source": "Upload",
+      "prompt": "Generate nature image",
+      "deadLine": "2024-12-31T23:59:59Z",
+      "status": "Draft",
+      "content": "This is a sample template content.",
+      "folderId": "",
+      "importTemplateId": "",
+      "fileUpload": "C:/Users/pande/Downloads/12.html",
+      "questions": "[{\"category\":\"Campaign Overview\",\"questions\":[{\"question\":\"What is the primary goal?\",\"answer\":\"Awareness\"}]}]"
+    }
+  },
+  "autosaveTemplate": {
+    "method": "PATCH",
+    "path": "/projects/{projectId}/builder/templates/{templateId}/autosave",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad",
+      "templateId": "685a3cc366d511d80af415c6"
+    },
+    "body": {
+      "content": "{\"key\":\"value\"}"
+    }
+  },
+  "publishTemplateVersion": {
+    "method": "POST",
+    "path": "/projects/{projectId}/builder/templates/{templateId}/versions/{versionId}/publish",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad",
+      "templateId": "685a3cc366d511d80af415c6",
+      "versionId": "68623bf92373a6e3dddfb887",
+      "publishedTo": "library"
+    }
+  },
+  "restoreTemplateVersion": {
+    "method": "POST",
+    "path": "/projects/{projectId}/builder/templates/{templateId}/versions/{versionId}/restore",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad",
+      "templateId": "685a3cc366d511d80af415c6",
+      "versionId": "68623bf92373a6e3dddfb887"
+    }
+  },
+  "copyTemplateVersion": {
+    "method": "POST",
+    "path": "/projects/{projectId}/builder/templates/{templateId}/versions/{versionId}/copy",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad",
+      "templateId": "685a3cc366d511d80af415c6",
+      "versionId": "68623bf92373a6e3dddfb887"
+    }
+  },
+  "getActiveVersion": {
+    "method": "GET",
+    "path": "/projects/{projectId}/builder/templates/{templateId}/active-version",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad",
+      "templateId": "685a3cc366d511d80af415c6"
+    }
+  },
+  "emailDraftVersion": {
+    "method": "POST",
+    "path": "/projects/{projectId}/builder/templates/{templateId}/versions/{versionId}/email-draft",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad",
+      "templateId": "685a3cc366d511d80af415c6",
+      "versionId": "686f4df3dd52d51dfdb481b2"
+    },
+    "body": {
+      "fromName": "Example Team",
+      "fromEmail": "noreply@example.com",
+      "replyTo": "hello@example.com",
+      "subject": "Welcome to the platform",
+      "previewText": "It is my preview",
+      "emailBody": "<!DOCTYPE html><html><body><h1>Hello</h1></body></html>"
+    }
+  },
+  "addComponentToLibrary": {
+    "method": "POST",
+    "path": "/projects/{projectId}/builder/templates/{templateId}/add-to-library",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad",
+      "templateId": "685a3cc366d511d80af415c6"
+    },
+    "body": {
+      "name": "Marketing Campaign Component",
+      "description": "Component for a marketing campaign.",
+      "content": "<div>{\"key\":\"value\"}</div>"
+    }
+  },
+  "aiTesting": {
+    "method": "POST",
+    "path": "/projects/{projectId}/templates/{templateId}/versions/{versionId}/ai/testing",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad",
+      "templateId": "685a3cc366d511d80af415c6",
+      "versionId": "68623d5d2373a6e3dddfbcb0"
+    },
+    "body": {
+      "content": "Sample AI content for processing.",
+      "rec_doc": "C:/Users/pande/Downloads/Welcome to Word.docx"
+    }
+  },
+  "aiImage": {
+    "method": "POST",
+    "path": "/projects/{projectId}/templates/{templateId}/versions/{versionId}/ai/image",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad",
+      "templateId": "685a3cc366d511d80af415c6",
+      "versionId": "68623d5d2373a6e3dddfbcb0"
+    },
+    "body": {
+      "imageUrls": [
+        "https://picsum.photos/200/300",
+        "https://picsum.photos/200"
+      ]
+    }
+  },
+  "auditResult": {
+    "method": "GET",
+    "path": "/projects/{projectId}/templates/{templateId}/versions/{versionId}/audit/result",
+    "params": {
+      "projectId": "6874dd4e2d28407f2d3950a5",
+      "templateId": "6874e6952d28407f2d395d29",
+      "versionId": "6874e6952d28407f2d395d2e"
+    }
+  },
+  "createFolder": {
+    "method": "POST",
+    "path": "/folders/{workspaceId}",
+    "params": {
+      "workspaceId": "685a3c1266d511d80af413ad"
+    },
+    "formData": {
+      "name": "Marketingtemplate",
+      "parentId": "",
+      "isDefaultPermission": true,
+      "users": [
+        "68553f8caa54728e48c334f4"
+      ]
+    },
+    "filePath": "C:/Users/pande/Downloads/12.html"
+  },
+  "getAllFolders": {
+    "method": "GET",
+    "path": "/folders/{workspaceId}",
+    "params": {
+      "workspaceId": "685a3c1266d511d80af413ad"
+    },
+    "query": {
+      "parentId": "",
+      "search": "Marketing",
+      "sortBy": "name",
+      "sortOrder": "asc",
+      "page": 1,
+      "pageSize": 10
+    }
+  },
+  "getFolderById": {
+    "method": "GET",
+    "path": "/folders/{workspaceId}/details/{folderId}",
+    "params": {
+      "workspaceId": "685a3c1266d511d80af413ad",
+      "folderId": "68749f2332c0df429cab2251"
+    }
+  },
+  "updateFolder": {
+    "method": "PUT",
+    "path": "/folders/{workspaceId}/{folderId}",
+    "params": {
+      "workspaceId": "685a3c1266d511d80af413ad",
+      "folderId": "68749f2332c0df429cab2251"
+    },
+    "body": {
+      "name": "Updated Folder Name",
+      "parentId": ""
+    }
+  },
+  "deleteFolder": {
+    "method": "DELETE",
+    "path": "/folders/{workspaceId}/{folderId}",
+    "params": {
+      "workspaceId": "685a3c1266d511d80af413ad",
+      "folderId": "68749f2332c0df429cab2251"
+    }
+  },
+  "createIssueTicket": {
+    "method": "POST",
+    "path": "/customer/issue-ticket",
+    "formData": {
+      "issueDescription": "My application is crashing.",
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "phoneNumber": "1234567890"
+    },
+    "filePath": "C:/Users/pande/Pictures/Screenshots/Screenshot 2025-06-16 130820.png"
+  },
+  "getAllIssueTickets": {
+    "method": "GET",
+    "path": "/customer/issue-ticket"
+  },
+  "getIssueTicketById": {
+    "method": "GET",
+    "path": "/customer/issue-ticket/68624ff32373a6e3dddfcbb5"
+  },
+  "updateIssueTicket": {
+    "method": "PUT",
+    "path": "/customer/issue-ticket/68624ff32373a6e3dddfcbb5",
+    "body": {
+      "issueDescription": "The issue has been updated with more details."
+    }
+  },
+  "deleteIssueTicket": {
+    "method": "DELETE",
+    "path": "/customer/issue-ticket/6874d7c02d28407f2d394bd8"
+  },
+  "getInvoices": {
+    "method": "GET",
+    "path": "/api/invoices"
+  },
+  "downloadInvoice": {
+    "method": "GET",
+    "path": "/api/invoice/1849/download"
+  },
+  "createMarketPlaceTemplate": {
+    "method": "POST",
+    "path": "/api/public/market-place-template",
+    "form": {
+      "name": "Marketing Campaign Template",
+      "description": "Template for a marketing campaign.",
+      "type": "email",
+      "status": "Draft",
+      "source": "Upload",
+      "content": "This is a sample template content.",
+      "fileUpload": "C:/Users/pande/Downloads/12.html"
+    }
+  },
+  "getMarketPlaceTemplates": {
+    "method": "GET",
+    "path": "/api/public/market-place-template",
+    "query": {
+      "page": 1,
+      "pageSize": 10,
+      "sortBy": "createdAt",
+      "sortOrder": "asc",
+      "search": "campaign",
+      "type": "email",
+      "status": "Published"
+    }
+  },
+  "getMarketoToken": {
+    "method": "GET",
+    "path": "/api/marketo/token"
+  },
+  "getMarketoAssets": {
+    "method": "GET",
+    "path": "/api/asset/marketo",
+    "queryParams": {
+      "type": "email",
+      "status": "approved",
+      "offset": "0"
+    }
+  },
+  "getMarketoFullContent": {
+    "path": "/api/asset/marketo/full-content",
+    "type": "email",
+    "templateId": "12345"
+  },
+  "getQuestionsAnswers": {
+    "method": "GET",
+    "path": "/api/public/questions-answers",
+    "queryParams": {
+      "page": 1,
+      "pageSize": 10,
+      "search": "form page"
+    }
+  },
+  "getExplainerVideos": {
+    "method": "GET",
+    "path": "/api/public/explainer-videos",
+    "queryParams": {
+      "search": "seo"
+    }
+  },
+  "globalSearch": {
+    "method": "GET",
+    "path": "/projects/global-search",
+    "queryParams": {
+      "search": "email"
+    }
+  },
+  "shareProjectFolderAccess": {
+    "method": "PUT",
+    "path": "/projects/{projectId}/access/share",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad",
+      "folderId": "68624e3c2373a6e3dddfcb00"
+    },
+    "body": {
+      "users": [
+        "68553f8caa54728e48c334f4"
+      ]
+    }
+  },
+  "getSharedUsersForProjectFolder": {
+    "method": "GET",
+    "path": "/projects/{projectId}/access/share",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad",
+      "folderId": "68624e3c2373a6e3dddfcb00"
+    }
+  },
+  "shareAccessToTemplate": {
+    "method": "PUT",
+    "path": "/projects/{projectId}/access/share/template/{templateId}",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad",
+      "templateId": "685a3dab66d511d80af416f9"
+    },
+    "body": {
+      "users": [
+        "68553f8caa54728e48c334f4"
+      ]
+    }
+  },
+  "shareAccessToFile": {
+    "method": "PUT",
+    "path": "/projects/{projectId}/access/share/file/{fileId}",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad",
+      "fileId": "6874d0a62d28407f2d394150"
+    },
+    "body": {
+      "users": [
+        "68553f8caa54728e48c334f4"
+      ]
+    }
+  },
+  "createProject": {
+    "method": "POST",
+    "path": "/projects",
+    "formParams": {
+      "name": "Project Name",
+      "description": "This is a sample project.",
+      "color": "#FF5733",
+      "users": [
+        "68553f8caa54728e48c334f4"
+      ],
+      "isDefaultPermission": "true"
+    },
+    "fileParam": {
+      "field": "rec_doc",
+      "path": "src/test/resources/sample.pdf"
+    }
+  },
+  "getProjects": {
+    "method": "GET",
+    "path": "/projects",
+    "queryParams": {
+      "page": "1",
+      "pageSize": "10",
+      "search": "project alpha",
+      "sortBy": "name",
+      "sortOrder": "asc"
+    }
+  },
+  "getProjectById": {
+    "method": "GET",
+    "path": "/projects/685a3c1266d511d80af413ad"
+  },
+  "updateProject": {
+    "method": "PUT",
+    "path": "/projects/{projectId}",
+    "projectId": "685a374366d511d80af40db5",
+    "name": "Updated Project Name",
+    "description": "Updated project description",
+    "color": "#FF5733",
+    "users": "68553f8caa54728e48c334f4"
+  },
+  "deleteProject": {
+    "method": "DELETE",
+    "path": "/projects/{projectId}",
+    "projectId": "685a374366d511d80af40db5"
+  },
+  "getUsageCounts": {
+    "method": "GET",
+    "path": "/projects/usage/count"
+  },
+  "getProjectUsers": {
+    "method": "GET",
+    "path": "/projects/685a3c1266d511d80af413ad/users"
+  },
+  "moveItems": {
+    "method": "POST",
+    "path": "/projects/685a3c1266d511d80af413ad/move-items",
+    "payload": {
+      "itemType": "file",
+      "itemIds": [
+        "68624cac2373a6e3dddfca8f"
+      ],
+      "destinationFolderId": "685a3c3a66d511d80af41474"
+    }
+  },
+  "getPlans": {
+    "method": "GET",
+    "path": "/api/plans",
+    "queryParams": {
+      "page": 1,
+      "pageSize": 10
+    }
+  },
+  "getSubscription": {
+    "method": "GET",
+    "path": "/api/subscription"
+  },
+  "cancelSubscription": {
+    "method": "POST",
+    "path": "/api/subscription/cancel"
+  },
+  "getPlanUsage": {
+    "method": "GET",
+    "path": "/api/subscription/usage"
+  },
+  "updateSubscription": {
+    "method": "POST",
+    "path": "/api/subscription/update",
+    "body": {
+      "id": "sootra_plan-month"
+    }
+  },
+  "getCustomerDetails": {
+    "method": "GET",
+    "path": "/api/subscription/get-customer-details"
+  },
+  "updateCustomerCard": {
+    "method": "PUT",
+    "path": "/api/subscription/update-customer-card",
+    "body": {
+      "cardDetails": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "number": "4111111111111111",
+        "expiryMonth": "12",
+        "expiryYear": "2025",
+        "cvv": "123"
+      }
+    }
+  },
+  "aiWordUsage": {
+    "method": "GET",
+    "path": "/api/subscription/aiWordUsage",
+    "queryParams": {
+      "filters": "email,landingPage"
+    }
+  },
+  "createTemplateVersion": {
+    "method": "POST",
+    "path": "/projects/{projectId}/templates/{templateId}/versions",
+    "params": {
+      "projectId": "6874dd4e2d28407f2d3950a5",
+      "templateId": "6874e6952d28407f2d395d29"
+    },
+    "formData": {
+      "name": "Updated Project Name",
+      "status": "Active",
+      "content": "<html><body>Welcome Email</body></html>",
+      "importTemplateId": "",
+      "clients": [
+        "68591e5208a44630b8b4f0b4"
+      ],
+      "mac_res": "1920x1080",
+      "win_res": "1366x768",
+      "configs": {
+        "windows 10": {
+          "chrome": [
+            "76"
+          ],
+          "firefox": [
+            "67"
+          ]
+        },
+        "macos mojave": {
+          "chrome": [
+            "76"
+          ],
+          "safari": [
+            "12"
+          ]
+        },
+        "ios 12.0": {
+          "devices": [
+            "iphone xr",
+            "iphone xs",
+            "iphone xs max"
+          ]
+        },
+        "android 9.0": {
+          "devices": [
+            "galaxy s9 plus"
+          ]
+        }
+      }
+    },
+    "files": {
+      "fileUpload": "C:/Users/pande/Downloads/12.html",
+      "rec_doc": "C:/Users/pande/Downloads/Welcome to Word.docx"
+    }
+  },
+  "getTemplateVersions": {
+    "method": "GET",
+    "path": "/projects/{projectId}/templates/{templateId}/versions",
+    "params": {
+      "projectId": "6874dd4e2d28407f2d3950a5",
+      "templateId": "6874e6952d28407f2d395d29",
+      "page": 1,
+      "pageSize": 10
+    }
+  },
+  "getVersionDetails": {
+    "method": "GET",
+    "path": "/projects/{projectId}/templates/{templateId}/versions/{versionId}",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad",
+      "templateId": "685a3cc366d511d80af415c6",
+      "versionId": "68623d5d2373a6e3dddfbcb0"
+    }
+  },
+  "updateTemplateVersion": {
+    "method": "PUT",
+    "path": "/projects/{projectId}/templates/{templateId}/versions/{versionId}",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad",
+      "templateId": "685a3cc366d511d80af415c6",
+      "versionId": "68623d5d2373a6e3dddfbcb0"
+    },
+    "body": {
+      "clients": ["68591e5208a44630b8b4f0b4"],
+      "mac_res": "1920x1080",
+      "win_res": "1366x768",
+      "configs": {
+        "windows 10": {
+          "chrome": ["76"],
+          "firefox": ["67"]
+        },
+        "macos mojave": {
+          "chrome": ["76"],
+          "safari": ["12"]
+        },
+        "ios 12.0": {
+          "devices": ["iphone xr", "iphone xs", "iphone xs max"]
+        },
+        "android 9.0": {
+          "devices": ["galaxy s9 plus"]
+        }
+      },
+      "file_upload": "C:/Users/pande/Downloads/12.html",
+      "rec_doc": "C:/Users/pande/Downloads/Welcome to Word.docx"
+    }
+  },
+  "deleteVersion": {
+    "method": "DELETE",
+    "path": "/projects/{projectId}/templates/{templateId}/versions/{versionId}",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad",
+      "templateId": "686e216c85fcb478b1924935",
+      "versionId": "68749f6332c0df429cab2374"
+    }
+  },
+  "updateRequirementDocument": {
+    "method": "PUT",
+    "path": "/projects/{projectId}/templates/{templateId}/versions/{versionId}/rec-doc",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad",
+      "templateId": "685e66e6919e1d5c49bfe4cf",
+      "versionId": "685e66e6919e1d5c49bfe4d3"
+    },
+    "file": {
+      "filePath": "C:/Users/pande/Downloads/Welcome to Word.docx",
+      "fieldName": "rec_doc"
+    }
+  },
+  "updateVersionTitle": {
+    "method": "PUT",
+    "path": "/projects/{projectId}/templates/{templateId}/versions/{versionId}/title",
+    "params": {
+      "projectId": "685a3c1266d511d80af413ad",
+      "templateId": "685e66e6919e1d5c49bfe4cf",
+      "versionId": "685e66e6919e1d5c49bfe4d3"
+    },
+    "body": {
+      "title": "New Updated Version Title"
+    }
+  },
+  "getSystemAdminNotifications": {
+    "method": "GET",
+    "path": "/api/system-admin/notifications",
+    "query": {
+      "page": 1,
+      "limit": 10,
+      "search": "security",
+      "sort": "-createdAt",
+      "filter": "{}"
+    }
+  },
+
+  "patchSystemAdminNotification": {
+    "method": "PATCH",
+    "path": "/api/system-admin/notifications/{notificationId}",
+    "params": {
+      "notificationId": "68520181539f041688ba75c6"
+    },
+    "body": {
+      "isRead": true
+    }
+  },
+  "getRecentSystemAdminNotifications": {
+    "method": "GET",
+    "path": "/api/system-admin/recent-notifications"
+  },
+  "deleteRecentSystemAdminNotifications": {
+    "method": "DELETE",
+    "path": "/api/system-admin/recent-notifications",
+    "query": {
+      "alertType": "company"
+    }
+  },
+  "updateSystemAdminNotificationPreferences": {
+    "method": "PUT",
+    "path": "/api/system-admin/notifications/preferences",
+    "body": {
+      "notificationPreferences": {
+        "notificationForUsageLimits": true,
+        "informUserWhenActionBlockedDueToLimit": true
+      },
+      "defaultNotificationChannels": {
+        "email": true,
+        "inApp": true
+      }
+    }
+  },
+  "getSystemAdminNotificationPreferences": {
+    "method": "GET",
+    "path": "/api/system-admin/notifications/preferences"
+  },
+  "getNotifications": {
+    "method": "GET",
+    "path": "/notifications",
+    "query": {
+      "page": 1,
+      "pageSize": 10
+    }
+  },
+  "updateNotification": {
+    "method": "PUT",
+    "path": "/notifications/686f4d7cdd52d51dfdb48054",
+    "body": {
+      "title": "New Notification",
+      "message": "Marketing Campaign Template template added to the Project 1 project",
+      "isRead": false
+    }
+  },
+  "markAllNotificationsAsRead": {
+    "method": "POST",
+    "path": "/notifications/mark-as-read"
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+

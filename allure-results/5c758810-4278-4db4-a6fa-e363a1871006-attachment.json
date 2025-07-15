@@ -1,0 +1,13 @@
+{
+    "message": "Welcome back! You’ve successfully logged in.",
+    "data": {
+        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODU1M2Y4Y2FhNTQ3MjhlNDhjMzM0ZjQiLCJpYXQiOjE3NTIwNDQ5MzksImV4cCI6MTc1MjA3MzczOX0.T6zQvBucR73NhdH4VKw-PAgosb_Bj28XXsq6kfteJgE",
+        "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODU1M2Y4Y2FhNTQ3MjhlNDhjMzM0ZjQiLCJpYXQiOjE3NTIwNDQ5MzksImV4cCI6MTc1MjA3MzczOX0.T6zQvBucR73NhdH4VKw-PAgosb_Bj28XXsq6kfteJgE",
+        "roleId": "68553b0f6e91d5151968488c",
+        "role": "Admin",
+        "isOnboardingComplete": true,
+        "isActive": true,
+        "deActiveType": "",
+        "deActiveReason": ""
+    }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="APITestSuite">
+    <test name="All Tests">
+        <packages>
+            <package name="authentication"/>
+            <package name="AI"/>
+            <package name="alerts"/>
+            <package name="builder"/>
+            <package name="comments"/>
+            <package name="contactusform"/>
+            <package name="files"/>
+            <package name="folder"/>
+            <package name="helpcenter"/>
+            <package name="invoices"/>
+            <package name="mailgun"/>
+            <package name="marketplace"/>
+            <package name="marketo"/>
+            <package name="notification"/>
+            <package name="onboarding"/>
+            <package name="project"/>
+            <package name="organizationquestion"/>
+            <package name="resolution"/>
+            <package name="reviews"/>
+            <package name="rolemanagement"/>
+            <package name="screenshot"/>
+            <package name="search"/>
+            <package name="shareaccess"/>
+            <package name="subscribtion"/>
+            <package name="template"/>
+            <package name="usermanagement"/>
+            <package name="versions"/>
+        </packages>
+    </test>
+</suite>
